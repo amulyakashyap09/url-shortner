@@ -1,7 +1,4 @@
 from functools import lru_cache
-from typing import Annotated
-
-from fastapi import Depends
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -23,6 +20,3 @@ class Settings(BaseSettings):
 def get_settings() -> Settings:
     """Get application settings."""
     return Settings()
-
-
-SettingsDep = Annotated[Settings, Depends(get_settings)]

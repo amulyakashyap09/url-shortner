@@ -7,7 +7,7 @@ from app.core.config import get_settings
 def create_app() -> FastAPI:
     """Create FastAPI application."""
     # Depends() only resolves inside request handlers, so the factory calls
-    # the cached getter directly; routes should use SettingsDep instead.
+    # the cached getter directly; routes use Depends(get_settings) instead.
     settings = get_settings()
     app = FastAPI(
         title=settings.app_name,

@@ -4,6 +4,7 @@ from typing import Annotated
 from fastapi import Depends
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+
 class Settings(BaseSettings):
     """Application settings."""
 
@@ -18,7 +19,7 @@ class Settings(BaseSettings):
     )
 
 
-@lru_cache()
+@lru_cache
 def get_settings() -> Settings:
     """Get application settings."""
     return Settings()

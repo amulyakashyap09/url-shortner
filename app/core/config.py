@@ -1,4 +1,5 @@
 from functools import lru_cache
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -8,7 +9,9 @@ class Settings(BaseSettings):
     app_name: str = "My Application"
     debug: bool = False
     database_url: str = "sqlite:///./test.db"
-    base_url: str = "http://localhost:8000"
+    base_url: str = "your-base-url"
+    secret_key: str = "your-secret-key"
+    algorithm: str = "your-algorithm"
 
     model_config = SettingsConfigDict(
         env_file=".env",
